@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methane.fyi - 甲烷科普网站</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 顶部区域 - 固定定位 -->
+    <div class="top-section">
+        <div class="header-container">
+            <!-- Logo - 靠左，移除了文字 -->
+            <div class="brand-area">
+                <!-- 用 <a> 标签包裹图片，href 指向首页 -->
+                <a href="index.html">
+                    <img src="https://i.postimg.cc/phW8Jn5r/logo.png" alt="Methane.fyi Logo" />
+                </a>
+            </div>
+
+            <!-- 顶部导航菜单 - 固定宽度，优先保证5个tag不被挤压 -->
+            <div class="main-nav">
+                <div class="nav-item">
+                    <a href="#">关于甲烷</a>
+                    <div class="dropdown-menu">
+                        <a href="1_science.html">科学</a>
+                        <a href="1_benefits.html">控排机遇</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">甲烷应用</a>
+                    <div class="dropdown-menu">
+                        <a href="2_use case.html">下游用途</a>
+                        <a href="2_recovery.html">回收利用</a>
+                        <a href="2_clean alternatives.html">清洁替代</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">排放数据</a>
+                    <div class="dropdown-menu">
+                        <a href="#">国家数据</a>
+                        <a href="#">产品数据</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">研究洞察</a>
+                    <div class="dropdown-menu">
+                        <a href="#">研究报告</a>
+                        <a href="#">博客</a>
+                        <a href="#">应用工具</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">关于我们</a>
+                </div>
+            </div>
+            
+            <!-- 搜索框 - 靠右 -->
+            <div class="search-area">
+                <input type="text" placeholder="搜索甲烷相关知识...">
+                <button onclick="alert('搜索功能待实现')">搜索</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 滚动进度条 - 固定定位 -->
+    <div class="scroll-progress-bar">
+        <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+
+    <!-- 主体内容 - 增加上边距 -->
+    <div class="main-content">
+
+        <!-- 模块1：修改后的内容 -->
+        <div class="intro-card">
+            <div class="text-content">
+                <h1>甲烷：气候行动的关键杠杆</h1>
+                <p>
+                    甲烷（CH₄）是最简单的有机化合物，也是天然气的主要成分。甲烷是全球第二大温室气体，控制甲烷排放是近中期减缓气候变化的有效方案。
+                </p>
+            </div>
+
+            <div class="image-content">
+                <!-- 自定义的甲烷分子结构动画 -->
+                <div class="methane-molecule">
+                    <div class="carbon-atom">C</div>
+                    <div class="hydrogen-atom h1">H</div>
+                    <div class="hydrogen-atom h2">H</div>
+                    <div class="hydrogen-atom h3">H</div>
+                    <div class="hydrogen-atom h4">H</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 版块二：议题模块 -->
+        <div class="issues-section">
+            <h2 class="section-title">全球甲烷控排正从目标承诺走向行动实施</h2>
+            <div class="issues-grid">
+                <div class="issue-card tech-card">
+                    <div class="issue-icon">⚙️</div>
+                    <div class="issue-title">技术</div>
+                </div>
+                <div class="issue-card policy-card">
+                    <div class="issue-icon">🏛️</div>
+                    <div class="issue-title">政策</div>
+                </div>
+                <div class="issue-card finance-card">
+                    <div class="issue-icon">💰</div>
+                    <div class="issue-title">金融</div>
+                </div>
+                <div class="issue-card market-card">
+                    <div class="issue-icon">📊</div>
+                    <div class="issue-title">市场机制</div>
+                </div>
+                <div class="issue-card practice-card">
+                    <div class="issue-icon">🏭</div>
+                    <div class="issue-title">行业实践</div>
+                </div>
+                <div class="issue-card cooperation-card">
+                    <div class="issue-icon">🤝</div>
+                    <div class="issue-title">国际合作</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 版块三：我们的工作 -->
+        <div class="work-section">
+            <div class="work-intro">
+                <h2 class="section-title">我们的工作</h2>
+                <p>
+                    落基山研究所（RMI）创立于1982年，是专业、独立的非盈利机构。我们致力于通过市场化解决方案推动全球能源系统转型，践行1.5℃温控气候目标，创造清洁、繁荣的零碳共享未来。
+                </p>
+                <p>
+                    落基山研究所中国甲烷项目采用"思考-行动-规模化"的方法论，将强大的市场力量与系统性转型模式相结合，助力中国的能源、农业和废弃物部门控制并削减甲烷排放，加强资源化利用，经济高效地实现中国的气候目标。
+                </p>
+            </div>
+            
+            <div class="work-columns">
+                <div class="work-column">
+                    <h3 class="column-title">最新研究成果及洞察</h3>
+                    <div class="carousel-container">
+                        <div class="carousel-slides" id="carouselSlides">
+                            <div class="slide" onclick="window.open('https://rmi.org.cn/insights/unlocking-the-high-value-utilization-of-crop-straw-report/', '_blank')">
+                                <div class="slide-icon">🌾</div>
+                                <div class="slide-info">
+                                    <h3>解锁秸秆高价值利用 生物燃料与碳移除产业的破局点</h3>
+                                    <p>挖掘秸秆的清洁能源供给和碳减排潜力</p>
+                                </div>
+                            </div>
+                            <div class="slide" onclick="window.open('https://rmi.org.cn/insights/coal-mine-methane-recovery-and-utilization-technologies-development-trends-and-outlook/', '_blank')">
+                                <div class="slide-icon">⛏️</div>
+                                <div class="slide-info">
+                                    <h3>瓦斯回收利用技术发展展望</h3>
+                                    <p>全面探讨瓦斯资源化利用的技术发展趋势和市场前景</p>
+                                </div>
+                            </div>
+                            <div class="slide" onclick="window.open('https://rmi.org.cn/insights/methane-emissions-mitigation-energy-sector/', '_blank')">
+                                <div class="slide-icon">📊</div>
+                                <div class="slide-info">
+                                    <h3>甲烷排放控制系列研究报告：<br>多维度推动能源领域甲烷控排及利用</h3>
+                                    <p>深入分析能源领域甲烷控排多维度措施</p>
+                                </div>
+                            </div>
+                            <div class="slide" onclick="window.open('https://rmi.org.cn/insights/biomethane-industry-outlook-report/', '_blank')">
+                                <div class="slide-icon">🌱</div>
+                                <div class="slide-info">
+                                    <h3>碳中和目标下的生物天然气行业展望：<br>减排潜力、成本效益及市场需求</h3>
+                                    <p>展望我国生物天然气行业发展前景</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn" onclick="prevSlide()">❮</button>
+                            <button class="carousel-btn" onclick="nextSlide()">❯</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-column">
+                    <h3 class="column-title">博客</h3>
+                    <ul class="blog-list">
+                        <li class="blog-item">
+                            <a href="https://rmi.org.cn/news/%e5%8d%81%e4%ba%94%e4%ba%94%e8%83%bd%e6%ba%90%e8%a7%82%e5%af%9f%e5%a4%9a%e9%a2%86%e5%9f%9f%e5%8d%8f%e5%90%8c%e6%8e%a8%e8%bf%9b%ef%bc%8c%e6%88%91%e5%9b%bd%e9%9d%9e%e4%ba%8c%e6%b0%a7%e5%8c%96%e7%a2%b3/" target="_blank" class="blog-title">十五五能源观察|多领域协同推进，我国非二氧化碳减排迈向系统性路径</a>
+                            <div class="blog-date">2026年4月2日</div>
+                        </li>
+                        <li class="blog-item">
+                            <a href="https://rmi.org.cn/%e5%9b%bd%e9%99%85%e7%94%9f%e7%89%a9%e5%a4%a9%e7%84%b6%e6%b0%94%e5%b8%82%e5%9c%ba%e8%a7%82%e5%af%9f%ef%bc%9a%e5%ae%9e%e8%b7%b5%e4%b8%8e%e5%b1%95%e6%9c%9b/" target="_blank" class="blog-title">国际生物天然气市场观察：实践与展望</a>
+                            <div class="blog-date">2025年2月25日</div>
+                        </li>
+                        <li class="blog-item">
+                            <a href="https://rmi.org.cn/%e6%ac%a7%e7%9b%9f%e8%83%bd%e6%ba%90%e8%a1%8c%e4%b8%9a%e7%94%b3%e7%83%b7%e5%87%8f%e6%8e%92%e7%ab%8b%e6%b3%95%e5%8a%a8%e5%90%91/" target="_blank" class="blog-title">欧盟能源行业甲烷减排立法动向</a>
+                            <div class="blog-date">2024年8月22日</div>
+                        </li>
+                        <li class="blog-item">
+                            <a href="https://rmi.org.cn/%e5%85%b1%e5%90%8c%e6%8e%a8%e8%bf%9b%e7%94%b2%e7%83%b7%e5%87%8f%e6%8e%92%ef%bc%9a%e4%b8%80%e5%9b%be%e8%af%bb%e6%87%82%e7%94%b2%e7%83%b7%e7%9a%84%e6%8e%92%e6%94%be%e9%80%94%e5%be%84%e5%8f%8a%e5%90%84/" target="_blank" class="blog-title">共同推进甲烷减排：一图读懂甲烷的排放途径及各行业排放机理</a>
+                            <div class="blog-date">2023年1月18日</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="footer-nav">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>研究洞察</h3>
+                <ul>
+                    <li><a href="#">研究洞察</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>甲烷控排</h3>
+                <ul>
+                    <li><a href="#">科学</a></li>
+                    <li><a href="#">MRV</a></li>
+                    <li><a href="#">技术</a></li>
+                    <li><a href="#">政策</a></li>
+                    <li><a href="#">金融</a></li>
+                    <li><a href="#">市场机制</a></li>
+                    <li><a href="#">行业实践</a></li>
+                    <li><a href="#">国际合作</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            
+            <div class="follow-us">
+                <h3>关注我们</h3>
+                <!-- 替换为实际的二维码图片 -->
+                <img src="https://i.postimg.cc/Ff71rgc9/Wechat.jpg" alt="微信二维码" class="qr-code-img" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementById('carouselSlides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function showSlide(index) {
+            if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                currentSlide = 0;
+            } else {
+                currentSlide = index;
+            }
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // 自动播放轮播
+        setInterval(() => {
+            nextSlide();
+        }, 5000);
+
+        // 滚动进度条功能
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const totalScrollable = docHeight - windowHeight;
+            
+            let scrollPercentage = 0;
+            if (totalScrollable > 0) {
+                scrollPercentage = Math.max(0, Math.min(100, (scrollY / totalScrollable) * 100));
+            }
+            
+            document.getElementById('scrollProgressFill').style.width = `${scrollPercentage}%`;
+        });
+    </script>
+
+</body>
+</html>
