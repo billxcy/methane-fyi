@@ -1,0 +1,1288 @@
+/* styles.css - 甲烷科普网站全局样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "等线", "Microsoft YaHei", sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- 顶部区域 - 固定定位 --- */
+.top-section {
+    background-color: #003b63; /* 深蓝色背景 */
+    color: white;
+    padding: 10px 0;
+    height: 80px; /* 设置固定高度 */
+    position: fixed; /* 固定定位 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* 确保在最顶层 */
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* 左右两端对齐 */
+    align-items: center;
+    padding: 0 20px;
+    height: 100%; /* 让容器占满父元素高度 */
+}
+
+/* Logo 和 标题区域 - 固定宽度，靠左 */
+.brand-area {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Logo和文字的间距 */
+    flex: 0 0 auto; /* 不伸缩，不收缩，保持内容宽度 */
+    margin-right: 20px; /* 与中间菜单保持距离 */
+}
+
+.brand-area img {
+    height: 80px; /* 增大Logo高度至80px，与顶部区域高度一致 */
+    width: auto;
+    object-fit: contain; /* 保持图片比例 */
+}
+
+.site-title {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 主导航菜单 - 设定固定宽度，保证5个标签不被挤压 */
+.main-nav {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    background-color: transparent;
+    /* 关键：设定一个固定宽度，略大于5个标签的总宽度 */
+    flex: 0 0 750px; /* 例如：每个标预约150px宽 */
+    min-width: 0; /* 关键：防止flex item溢出 */
+    justify-content: space-around; /* 在固定宽度内平均分布5个标签 */
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+    /* margin: 0 15px; */ /* 移除左右margin，用space-around控制间距 */
+    padding: 15px 10px;
+    display: block;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-item a:hover {
+    color: #5bc0de;
+}
+
+/* 下拉菜单样式 */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+    color: #003b63;
+}
+
+/* 搜索框区域 - 固定宽度，靠右 */
+.search-area {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto; /* 不伸缩，不收缩，保持内容宽度 */
+    margin-left: 20px; /* 与中间菜单保持距离 */
+}
+
+.search-area input {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 250px;
+    font-family: "等线", sans-serif;
+}
+
+.search-area button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "等线", sans-serif;
+}
+
+/* --- 滚动进度条 - 固定定位 --- */
+.scroll-progress-bar {
+    position: fixed; /* 固定定位 */
+    top: 80px; /* 位于固定顶部区域下方 */
+    left: 0;
+    width: 100%;
+    height: 10px; /* 窄窄的进度条 */
+    background-color: #e0e0e0; /* 背景色 */
+    z-index: 1000; /* 确保在菜单下方但在内容上方 */
+}
+
+.scroll-progress-fill {
+    height: 100%;
+    width: 0%; /* 初始宽度为0 */
+    background-color: #44cfcb; /* 蓝绿色 */
+    transition: width 0.1s ease; /* 平滑过渡 */
+}
+
+/* --- 主体内容区域 - 增加上边距 --- */
+.main-content {
+    width: 100%;
+    margin: 120px auto 0; /* 上边距增加到120px，为固定菜单和进度条留出空间 */
+    padding: 0 20px;
+    flex: 1;
+}
+
+/* 导航路径样式 */
+.breadcrumb {
+    color: #666;
+    font-size: 14px;
+    margin: 20px 0 10px 0;
+}
+
+/* 页面标题样式 */
+.page-header {
+    text-align: center;
+    margin: 20px 0 30px;
+}
+
+.page-title {
+    font-size: 36px;
+    color: #003b63;
+    margin-bottom: 15px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 板块1：介绍文字 */
+.introduction {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* 用途方框容器样式 */
+.uses-container {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 自适应列数 */
+    gap: 20px;
+}
+
+/* 单个用途方框样式 */
+.use-box {
+    background-color: #e3f2fd; /* 浅蓝色背景 */
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.use-box:hover {
+    transform: translateY(-5px);
+    background-color: #d1e7ff; /* 悬停时颜色变化 */
+}
+
+.use-title {
+    font-size: 22px;
+    color: #003b63;
+    margin-bottom: 15px;
+}
+
+.use-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 板块2：标题 */
+.section2-title {
+    text-align: center;
+    font-size: 28px;
+    color: #003b63;
+    margin: 40px auto 20px;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+/* 趋势图方框样式 */
+.trend-chart-box {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 图表容器 */
+.chart-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+/* 坐标轴样式 */
+.axis {
+    stroke: #333;
+    stroke-width: 2;
+}
+
+/* 网格线样式 */
+.grid-line {
+    stroke: #ccc;
+    stroke-width: 1;
+    stroke-dasharray: 2 2;
+}
+
+/* 数据线样式 */
+.data-line {
+    fill: none;
+    stroke: #44cfcb;
+    stroke-width: 3;
+}
+
+/* 数据点样式 */
+.data-point {
+    fill: #003b63;
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+/* 标签样式 */
+.label {
+    font-size: 14px;
+    fill: #333;
+    text-anchor: middle;
+}
+
+/* 图例样式 */
+.legend {
+    font-size: 16px;
+    fill: #003b63;
+    font-weight: bold;
+}
+
+/* 三个好处圆形容器 */
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.benefit-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #e3f2fd; /* 浅蓝色背景 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.benefit-circle:hover {
+    transform: scale(1.05);
+    background-color: #d1e7ff;
+}
+
+.benefit-logo {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.benefit-title {
+    font-size: 18px;
+    color: #003b63;
+    text-align: center;
+}
+
+/* 领域介绍板块容器 */
+.sectors-container {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.sector-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.sector-title {
+    font-size: 24px;
+    color: #003b63;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #44cfcb;
+}
+
+/* 可视化流程图容器 */
+.flow-diagram {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+/* 流程节点样式 */
+.node {
+    width: 120px;
+    height: 80px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.node-input {
+    background-color: #007acc;
+}
+
+.node-process {
+    background-color: #44cfcb;
+}
+
+.node-output {
+    background-color: #5bc0de;
+}
+
+/* 连接线样式 */
+.arrow {
+    position: absolute;
+    height: 4px;
+    background-color: #003b63;
+    z-index: 1;
+}
+
+.arrow::after {
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: -4px;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid #003b63;
+}
+
+/* 路径容器 */
+.path-container {
+    margin-bottom: 40px;
+}
+
+.path-title {
+    font-size: 18px;
+    color: #003b63;
+    margin-bottom: 15px;
+}
+
+/* 清洁替代品介绍板块容器 */
+.substitutes-container {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.substitute-card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.substitute-title {
+    font-size: 24px;
+    color: #003b63;
+    margin-bottom: 20px;
+}
+
+.substitute-desc {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.substitute-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* 箭头图标 */
+.arrow-down {
+    font-size: 24px;
+    color: #003b63;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* 替代说明板块 */
+.alternative-explanation {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.explanation-title {
+    font-size: 24px;
+    color: #003b63;
+    margin-bottom: 15px;
+}
+
+.explanation-text {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 数据方框样式 */
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.data-card {
+    background-color: #e3f2fd; /* 浅蓝色背景 */
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.data-card:hover {
+    transform: translateY(-5px);
+}
+
+.data-number {
+    font-size: 48px; /* 更大的字号 */
+    font-weight: bold;
+    color: #44cfcb; /* 湖蓝色 */
+    margin-bottom: 10px;
+    display: block;
+}
+
+.data-label {
+    font-size: 16px; /* 较小的字号 */
+    color: #003b63; /* 深蓝色 */
+    line-height: 1.5;
+}
+
+/* 排放源板块样式 */
+.emission-sources {
+    margin: 50px 0;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #003b63;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sources-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.source-box {
+    flex: 1;
+    background-color: #f8fbfc;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.source-title {
+    font-size: 22px;
+    color: #003b63;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #44cfcb;
+}
+
+.source-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* 横向柱状图样式 */
+.chart-container {
+    background-color: #f8fbfc;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.chart-title {
+    font-size: 20px;
+    color: #003b63;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.horizontal-bar-container {
+    display: flex;
+    height: 60px;
+    background-color: #e0e0e0; /* 背景灰色，模拟完整100% */
+    border-radius: 5px;
+    overflow: hidden; /* 确保内部元素不溢出圆角 */
+    margin-bottom: 20px;
+    position: relative; /* 添加相对定位，用于提示框定位 */
+}
+
+.segment {
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.natural-segment {
+    background-color: #003b63; /* 深蓝色 */
+    width: 35%; /* 占比35% */
+    border-radius: 5px 0 0 5px;
+}
+
+.anthropogenic-segment {
+    background-color: #44cfcb; /* 湖蓝色 */
+    width: 65%; /* 占比65% */
+    border-radius: 0 5px 5px 0;
+}
+
+.bar-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bar-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.label {
+    font-size: 16px;
+    color: #333;
+    width: 35%;
+    text-align: center;
+}
+
+.label:last-child {
+    width: 65%;
+}
+
+.chart-source {
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+}
+
+.chart-source a {
+    color: #44cfcb;
+    text-decoration: none;
+}
+
+.chart-source a:hover {
+    text-decoration: underline;
+}
+
+/* 新增的转型路径模块样式 */
+.transition-pathways {
+    margin: 50px 0;
+}
+
+.pathways-intro {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* 图表容器样式 - 修改为flex布局以容纳图例 */
+.interactive-chart-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-and-legend {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px; /* 图表和图例之间的间距 */
+}
+
+.chart-wrapper {
+    position: relative;
+}
+
+.chart-svg {
+    width: 800px; /* 固定图表宽度 */
+    height: 400px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: visible; /* 确保svg内容可以溢出边界，例如tooltip */
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-size: 14px;
+    fill: #333;
+}
+
+.grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.line {
+    fill: none;
+    stroke-width: 2px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+.dot {
+    r: 5;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s, r 0.2s;
+}
+
+.line:hover ~ .dots .dot,
+.dot:hover {
+    opacity: 1;
+    r: 6;
+    stroke: white;
+    stroke-width: 1px;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 1002;
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 20px; /* 与图表的间距 */
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+}
+
+/* 效益方框容器样式 */
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    margin-top: 40px;
+}
+
+/* 基础方框样式 - 宽度与页面一致 */
+.benefit-box {
+    background-color: #e3f2fd; /* 浅蓝色背景 */
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* 隐藏溢出的内容 */
+}
+
+.benefit-box:hover {
+    transform: translateY(-5px);
+    background-color: #d1e7ff; /* 悬停时颜色变化 */
+}
+
+.benefit-title {
+    font-size: 24px;
+    color: #003b63;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.benefit-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.7;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+}
+
+/* 悬停时显示描述文字 */
+.benefit-box:hover .benefit-title {
+    opacity: 0;
+}
+
+.benefit-box:hover .benefit-description {
+    opacity: 1;
+}
+
+/* 底部导航栏 */
+.footer-nav {
+    background-color: #003b63;
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #5bc0de;
+}
+
+.footer-column ul {
+    list-style-type: none;
+}
+
+.footer-column li {
+    margin-bottom: 12px;
+}
+
+.footer-column a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #5bc0de;
+}
+
+.follow-us {
+    width: 200px;
+    text-align: center;
+}
+
+.follow-us h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #5bc0de;
+}
+
+.qr-code-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid #5bc0de;
+    padding: 5px;
+    background-color: white;
+}
+
+/* 首页特有样式 */
+.intro-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 40px;
+    display: flex; /* 使用 Flex 布局让文字和图片并排 */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.text-content {
+    flex: 1; /* 文字部分占据剩余空间 */
+}
+
+.text-content h1 {
+    font-size: 28px;
+    color: #003b63;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.text-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.text-content p + p {
+    margin-top: 20px;
+}
+
+.image-content {
+    flex-shrink: 0;
+    width: 300px; /* 图片区域宽度 */
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.methane-molecule {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.carbon-atom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-color: #2c3e50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.hydrogen-atom {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #3498db;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.h1 {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: orbit1 8s infinite linear;
+}
+
+.h2 {
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+    animation: orbit2 8s infinite linear;
+}
+
+.h3 {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: orbit3 8s infinite linear;
+}
+
+.h4 {
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    animation: orbit4 8s infinite linear;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes orbit1 {
+    0% { transform: translate(50%, 100%); }
+    25% { transform: translate(100%, 50%); }
+    50% { transform: translate(50%, 0%); }
+    75% { transform: translate(0%, 50%); }
+    100% { transform: translate(50%, 100%); }
+}
+
+@keyframes orbit2 {
+    0% { transform: translate(100%, 50%); }
+    25% { transform: translate(50%, 100%); }
+    50% { transform: translate(0%, 50%); }
+    75% { transform: translate(50%, 0%); }
+    100% { transform: translate(100%, 50%); }
+}
+
+@keyframes orbit3 {
+    0% { transform: translate(50%, 0%); }
+    25% { transform: translate(100%, 50%); }
+    50% { transform: translate(50%, 100%); }
+    75% { transform: translate(0%, 50%); }
+    100% { transform: translate(50%, 0%); }
+}
+
+@keyframes orbit4 {
+    0% { transform: translate(0%, 50%); }
+    25% { transform: translate(50%, 0%); }
+    50% { transform: translate(100%, 50%); }
+    75% { transform: translate(50%, 100%); }
+    100% { transform: translate(0%, 50%); }
+}
+
+.issues-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.issue-card {
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+    background: linear-gradient(135deg, #003b63, #005a8c);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.issue-card:hover {
+    transform: translateY(-5px);
+}
+
+.issue-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.issue-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.work-section {
+    margin-top: 60px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    padding: 40px;
+}
+
+.work-intro {
+    margin-bottom: 40px;
+}
+
+.work-intro p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.work-columns {
+    display: flex;
+    gap: 30px;
+}
+
+.work-column {
+    flex: 1;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.column-title {
+    font-size: 22px;
+    color: #003b63;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #003b63;
+}
+
+/* 滚动图片模块 */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 300px;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3f2fd;
+    color: #003b63;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer; /* 显示为手型光标 */
+    transition: background-color 0.3s ease; /* 添加过渡效果 */
+}
+
+.slide:hover {
+    background-color: #d1e7ff; /* 悬停时改变背景色 */
+}
+
+.slide-icon {
+    width: 100px;
+    height: 100px;
+    background-color: #bbdefb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.slide-info h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+    word-wrap: break-word; /* 允许长单词换行 */
+    overflow-wrap: break-word;
+    max-width: 100%; /* 限制最大宽度 */
+}
+
+.slide-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.carousel-btn {
+    background-color: rgba(0, 59, 99, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 博客列表 */
+.blog-list {
+    list-style-type: none;
+}
+
+.blog-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-item:last-child {
+    border-bottom: none;
+}
+
+.blog-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #003b63 !important; /* 强制覆盖链接默认颜色 */
+    margin-bottom: 5px;
+    text-decoration: none !important; /* 强制去掉下划线 */
+}
+
+.blog-title:hover {
+     text-decoration: underline !important; /* 悬停时显示下划线 */
+}
+
+.blog-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.blog-excerpt {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}

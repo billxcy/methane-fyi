@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甲烷应用-回收利用 - Methane.fyi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 顶部区域 - 固定定位 -->
+    <div class="top-section">
+        <div class="header-container">
+            <!-- Logo - 靠左，移除了文字 -->
+            <div class="brand-area">
+                <!-- 用 <a> 标签包裹图片，href 指向首页 -->
+                <a href="Methane FYI_0_main page.html">
+                    <img src="https://i.postimg.cc/phW8Jn5r/logo.png" alt="Methane.fyi Logo" />
+                </a>
+            </div>
+
+            <!-- 顶部导航菜单 - 固定宽度，优先保证5个tag不被挤压 -->
+            <div class="main-nav">
+                <div class="nav-item">
+                    <a href="#">关于甲烷</a>
+                    <div class="dropdown-menu">
+                        <a href="Methane FYI_1_science.html">科学</a>
+                        <a href="Methane FYI_1_benefits.html">控排机遇</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">甲烷应用</a>
+                    <div class="dropdown-menu">
+                        <a href="Methane FYI_2_use case.html">下游用途</a>
+                        <a href="Methane FYI_2_recovery.html">回收利用</a>
+                        <a href="Methane FYI_2_clean alternatives.html">清洁替代</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">排放数据</a>
+                    <div class="dropdown-menu">
+                        <a href="#">国家数据</a>
+                        <a href="#">产品数据</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">研究洞察</a>
+                    <div class="dropdown-menu">
+                        <a href="#">研究报告</a>
+                        <a href="#">博客</a>
+                        <a href="#">应用工具</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">关于我们</a>
+                </div>
+            </div>
+            
+            <!-- 搜索框 - 靠右 -->
+            <div class="search-area">
+                <input type="text" placeholder="搜索甲烷相关知识...">
+                <button onclick="alert('搜索功能待实现')">搜索</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 滚动进度条 - 固定定位 -->
+    <div class="scroll-progress-bar">
+        <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+
+    <!-- 主体内容 - 增加上边距 -->
+    <div class="main-content">
+        <!-- 导航路径 -->
+        <div class="breadcrumb">甲烷应用 > 回收利用</div>
+        
+        <!-- 页面标题 -->
+        <div class="page-header">
+            <h1 class="page-title">甲烷回收利用</h1>
+        </div>
+
+        <!-- 板块1：介绍文字 -->
+        <div class="introduction">
+            <p>甲烷可进行回收和资源化利用，在提供额外清洁能源的同时，实现甲烷排放控制。</p>
+        </div>
+
+        <!-- 三个好处圆形容器 -->
+        <div class="benefits-container">
+            <!-- 安全保障 -->
+            <div class="benefit-circle">
+                <div class="benefit-logo">🔒</div>
+                <div class="benefit-title">安全保障</div>
+            </div>
+
+            <!-- 收益提升 -->
+            <div class="benefit-circle">
+                <div class="benefit-logo">💰</div>
+                <div class="benefit-title">收益提升</div>
+            </div>
+
+            <!-- 减污降碳 -->
+            <div class="benefit-circle">
+                <div class="benefit-logo">🌍</div>
+                <div class="benefit-title">减污降碳</div>
+            </div>
+        </div>
+
+        <!-- 领域介绍板块容器 -->
+        <div class="sectors-container">
+            <!-- 能源领域 -->
+            <div class="sector-card">
+                <h3 class="sector-title">能源</h3>
+                <!-- 第一条路径 -->
+                <div class="path-container">
+                    <div class="path-title">煤矿瓦斯 → 提纯利用 → 天然气、电力和热力</div>
+                    <div class="flow-diagram">
+                        <div class="node node-input">煤矿瓦斯</div>
+                        <div class="arrow" style="width: 100px; left: 170px;"></div>
+                        <div class="node node-process">提纯利用</div>
+                        <div class="arrow" style="width: 100px; left: 420px;"></div>
+                        <div class="node node-output">天然气<br>电力<br>热力</div>
+                    </div>
+                </div>
+                <!-- 第二条路径 -->
+                <div class="path-container">
+                    <div class="path-title">油气伴生气、放空气 → 减少泄漏或回收 → 增加天然气产量</div>
+                    <div class="flow-diagram">
+                        <div class="node node-input">油气伴生<br>气、放空气</div>
+                        <div class="arrow" style="width: 100px; left: 170px;"></div>
+                        <div class="node node-process">减少泄漏<br>或回收</div>
+                        <div class="arrow" style="width: 100px; left: 420px;"></div>
+                        <div class="node node-output">增加天然<br>气产量</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 农业领域 -->
+            <div class="sector-card">
+                <h3 class="sector-title">农业</h3>
+                <!-- 第一条路径 -->
+                <div class="path-container">
+                    <div class="path-title">粪污等农业废弃物厌氧发酵 → 沼气 → 电力、热力或生物天然气</div>
+                    <div class="flow-diagram">
+                        <div class="node node-input">粪污等农业<br>废弃物厌氧发酵</div>
+                        <div class="arrow" style="width: 100px; left: 170px;"></div>
+                        <div class="node node-process">沼气</div>
+                        <div class="arrow" style="width: 100px; left: 420px;"></div>
+                        <div class="node node-output">电力、热力<br>或生物天然气</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 废弃物领域 -->
+            <div class="sector-card">
+                <h3 class="sector-title">废弃物</h3>
+                <!-- 第一条路径 -->
+                <div class="path-container">
+                    <div class="path-title">城市生活垃圾 → 填埋气 → 电力或可再生天然气</div>
+                    <div class="flow-diagram">
+                        <div class="node node-input">城市生活<br>垃圾</div>
+                        <div class="arrow" style="width: 100px; left: 170px;"></div>
+                        <div class="node node-process">填埋气</div>
+                        <div class="arrow" style="width: 100px; left: 420px;"></div>
+                        <div class="node node-output">电力或可<br>再生天然气</div>
+                    </div>
+                </div>
+                <!-- 第二条路径 -->
+                <div class="path-container">
+                    <div class="path-title">有机废水 → 沼气 → 电力、热力或生物天然气</div>
+                    <div class="flow-diagram">
+                        <div class="node node-input">有机废水</div>
+                        <div class="arrow" style="width: 100px; left: 170px;"></div>
+                        <div class="node node-process">沼气</div>
+                        <div class="arrow" style="width: 100px; left: 420px;"></div>
+                        <div class="node node-output">电力、热力<br>或生物天然气</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="footer-nav">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>研究洞察</h3>
+                <ul>
+                    <li><a href="#">研究洞察</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>甲烷控排</h3>
+                <ul>
+                    <li><a href="#">科学</a></li>
+                    <li><a href="#">MRV</a></li>
+                    <li><a href="#">技术</a></li>
+                    <li><a href="#">政策</a></li>
+                    <li><a href="#">金融</a></li>
+                    <li><a href="#">市场机制</a></li>
+                    <li><a href="#">行业实践</a></li>
+                    <li><a href="#">国际合作</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            
+            <div class="follow-us">
+                <h3>关注我们</h3>
+                <!-- 替换为实际的二维码图片 -->
+                <img src="https://i.postimg.cc/Ff71rgc9/Wechat.jpg" alt="微信二维码" class="qr-code-img" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 滚动进度条功能
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const totalScrollable = docHeight - windowHeight;
+            
+            let scrollPercentage = 0;
+            if (totalScrollable > 0) {
+                scrollPercentage = Math.max(0, Math.min(100, (scrollY / totalScrollable) * 100));
+            }
+            
+            document.getElementById('scrollProgressFill').style.width = `${scrollPercentage}%`;
+        });
+    </script>
+
+</body>
+</html>

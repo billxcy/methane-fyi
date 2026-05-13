@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甲烷科学 - Methane.fyi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 顶部区域 - 固定定位 -->
+    <div class="top-section">
+        <div class="header-container">
+            <!-- Logo - 靠左，移除了文字 -->
+            <div class="brand-area">
+                <!-- 用 <a> 标签包裹图片，href 指向首页 -->
+                <a href="Methane FYI_0_main page.html">
+                    <img src="https://i.postimg.cc/phW8Jn5r/logo.png" alt="Methane.fyi Logo" />
+                </a>
+            </div>
+
+            <!-- 顶部导航菜单 - 固定宽度，优先保证5个tag不被挤压 -->
+            <div class="main-nav">
+                <div class="nav-item">
+                    <a href="#">关于甲烷</a>
+                    <div class="dropdown-menu">
+                        <a href="Methane FYI_1_science.html">科学</a>
+                        <a href="Methane FYI_1_benefits.html">控排机遇</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">甲烷应用</a>
+                    <div class="dropdown-menu">
+                        <a href="Methane FYI_2_use case.html">下游用途</a>
+                        <a href="Methane FYI_2_recovery.html">回收利用</a>
+                        <a href="Methane FYI_2_clean alternatives.html">清洁替代</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">排放数据</a>
+                    <div class="dropdown-menu">
+                        <a href="#">国家数据</a>
+                        <a href="#">产品数据</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">研究洞察</a>
+                    <div class="dropdown-menu">
+                        <a href="#">研究报告</a>
+                        <a href="#">博客</a>
+                        <a href="#">应用工具</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">关于我们</a>
+                </div>
+            </div>
+            
+            <!-- 搜索框 - 靠右 -->
+            <div class="search-area">
+                <input type="text" placeholder="搜索甲烷相关知识...">
+                <button onclick="alert('搜索功能待实现')">搜索</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 滚动进度条 - 固定定位 -->
+    <div class="scroll-progress-bar">
+        <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+
+    <!-- 主体内容 - 增加上边距 -->
+    <div class="main-content">
+        <!-- 导航路径 -->
+        <div class="breadcrumb">关于甲烷 > 甲烷科学</div>
+        
+        <!-- 页面标题 -->
+        <div class="page-header">
+            <h1 class="page-title">甲烷科学</h1>
+            <p class="page-subtitle">甲烷是一种短寿命、强效温室气体，对全球变暖的贡献显著。</p>
+        </div>
+
+        <!-- 数据方框网格 -->
+        <div class="data-grid">
+            <div class="data-card">
+                <span class="data-number">86倍</span>
+                <span class="data-label">20年内甲烷的GWP</span>
+            </div>
+            <div class="data-card">
+                <span class="data-number">18%</span>
+                <span class="data-label">甲烷占全球温室气体排放的比例</span>
+            </div>
+            <div class="data-card">
+                <span class="data-number">1/3</span>
+                <span class="data-label">甲烷对全球变暖的贡献</span>
+            </div>
+            <div class="data-card">
+                <span class="data-number">165%</span>
+                <span class="data-label">工业化以来大气甲烷浓度上升幅度</span>
+            </div>
+        </div>
+
+        <!-- 排放源板块 -->
+        <div class="emission-sources">
+            <h2 class="section-title">排放源</h2>
+            <div class="sources-container">
+                <div class="source-box">
+                    <h3 class="source-title">自然源</h3>
+                    <p class="source-content">自然源甲烷主要是自然界中的有机物处于厌氧环境中而自然产生，例如沼泽或湿地中。在未来全球变暖的情况下，永久冻土、沿海湿地和海底天然气水合物的解冻可能会增加甲烷排放量。</p>
+                </div>
+                <div class="source-box">
+                    <h3 class="source-title">人为源</h3>
+                    <p class="source-content">人为甲烷排放来源于煤炭开采、矿后活动和废弃矿井，石油天然气系统生产、运输、储存和终端利用的全过程，农业领域水稻种植，动物肠道发酵和粪便管理等活动，垃圾填埋场的填埋气及废水处理等过程。</p>
+                </div>
+            </div>
+
+            <!-- 横向比例柱形图 -->
+            <div class="chart-container">
+                <h3 class="chart-title">甲烷排放源构成</h3>
+                <div class="horizontal-bar-container">
+                    <div class="segment natural-segment">
+                        <div class="bar-value">35%</div>
+                    </div>
+                    <div class="segment anthropogenic-segment">
+                        <div class="bar-value">65%</div>
+                    </div>
+                </div>
+                <div class="bar-labels">
+                    <div class="label">自然源</div>
+                    <div class="label">人为源</div>
+                </div>
+                <div class="chart-source">数据来源: <a href="https://essd.copernicus.org/articles/17/1873/2025/" target="_blank">Global Methane Budget 2000–2020</a></div>
+            </div>
+        </div>
+
+        <!-- 新增的转型路径模块 -->
+        <div class="transition-pathways">
+            <h2 class="section-title">转型路径</h2>
+            <p class="pathways-intro">为实现《巴黎协定》全球温升控制目标，需有效控制并减少甲烷排放。</p>
+            <div class="interactive-chart-container">
+                <div class="chart-and-legend">
+                    <div class="chart-wrapper" id="lineChartContainer"></div>
+                    <div class="legend" id="chartLegend"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="footer-nav">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>研究洞察</h3>
+                <ul>
+                    <li><a href="#">研究洞察</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>甲烷控排</h3>
+                <ul>
+                    <li><a href="#">科学</a></li>
+                    <li><a href="#">MRV</a></li>
+                    <li><a href="#">技术</a></li>
+                    <li><a href="#">政策</a></li>
+                    <li><a href="#">金融</a></li>
+                    <li><a href="#">市场机制</a></li>
+                    <li><a href="#">行业实践</a></li>
+                    <li><a href="#">国际合作</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            
+            <div class="follow-us">
+                <h3>关注我们</h3>
+                <!-- 替换为实际的二维码图片 -->
+                <img src="https://i.postimg.cc/Ff71rgc9/Wechat.jpg" alt="微信二维码" class="qr-code-img" />
+            </div>
+        </div>
+    </div>
+
+    <!-- 在所有其他脚本之前引入 D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script>
+        // 滚动进度条功能
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const totalScrollable = docHeight - windowHeight;
+            
+            let scrollPercentage = 0;
+            if (totalScrollable > 0) {
+                scrollPercentage = Math.max(0, Math.min(100, (scrollY / totalScrollable) * 100));
+            }
+            
+            document.getElementById('scrollProgressFill').style.width = `${scrollPercentage}%`;
+        });
+
+        // 交互式折线图脚本
+        document.addEventListener('DOMContentLoaded', function() {
+            // 检查 D3 是否已加载
+            if (typeof d3 === 'undefined') {
+                console.error('D3.js library is not loaded.');
+                document.getElementById('lineChartContainer').innerHTML = '<p style="color: red; font-size: 16px;">图表加载失败：无法获取 D3.js 库。</p>';
+                return;
+            }
+
+            // 确保DOM元素存在后再继续
+            const container = document.getElementById('lineChartContainer');
+            const legendContainer = document.getElementById('chartLegend');
+            if (!container || !legendContainer) {
+                console.error('Chart container or legend container element not found.');
+                return;
+            }
+
+            // 图表数据
+            const chartData = {
+                title: "不同情景下全球甲烷排放长期展望 (2020-2050)",
+                xLabel: "年份",
+                yLabel: "排放量（百万吨/年）",
+                series: [
+                    {
+                        name: "基准情景 (NDC)",
+                        data: [
+                            { year: 2020, value: 570 },
+                            { year: 2025, value: 590 },
+                            { year: 2030, value: 610 },
+                            { year: 2035, value: 630 },
+                            { year: 2040, value: 650 },
+                            { year: 2045, value: 670 },
+                            { year: 2050, value: 690 }
+                        ],
+                        color: "#44cfcb"
+                    },
+                    {
+                        name: "减排情景 (NZE)",
+                        data: [
+                            { year: 2020, value: 570 },
+                            { year: 2025, value: 550 },
+                            { year: 2030, value: 520 },
+                            { year: 2035, value: 480 },
+                            { year: 2040, value: 430 },
+                            { year: 2045, value: 380 },
+                            { year: 2050, value: 320 }
+                        ],
+                        color: "#003b63"
+                    }
+                ]
+            };
+
+            // SVG 容器尺寸
+            const margin = { top: 50, right: 20, bottom: 70, left: 70 }; // 减少右边距，因为图例在右侧
+            const width = 800 - margin.left - margin.right; // 直接指定宽度
+            const height = 400 - margin.top - margin.bottom;
+
+            // 创建 SVG
+            const svg = d3.select("#lineChartContainer")
+                .append("svg")
+                .attr("class", "chart-svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            // 合并所有数据点以计算范围
+            let allValues = [];
+            chartData.series.forEach(s => s.data.forEach(d => allValues.push(d.value)));
+            const xMin = d3.min(chartData.series[0].data, d => d.year);
+            const xMax = d3.max(chartData.series[0].data, d => d.year);
+            const yMin = d3.min(allValues);
+            const yMax = d3.max(allValues);
+
+            // 创建 X 轴和 Y 轴的比例尺
+            const xScale = d3.scaleLinear()
+                .domain([xMin, xMax])
+                .range([0, width]);
+
+            const yScale = d3.scaleLinear()
+                .domain([yMin, yMax * 1.1]) // Y轴上限稍微高于最大值
+                .range([height, 0]);
+
+            // 创建 X 轴和 Y 轴
+            const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"));
+            const yAxis = d3.axisLeft(yScale);
+
+            // 添加 X 轴
+            svg.append("g")
+                .attr("class", "axis")
+                .attr("transform", `translate(0,${height})`)
+                .call(xAxis)
+                .selectAll("text")
+                .style("text-anchor", "middle");
+
+            // 添加 Y 轴
+            svg.append("g")
+                .attr("class", "axis")
+                .call(yAxis);
+
+            // 添加 X 轴标签
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("x", width / 2)
+                .attr("y", height + margin.bottom - 10)
+                .style("text-anchor", "middle")
+                .style("font-size", "14px")
+                .text(chartData.xLabel);
+
+            // 添加 Y 轴标签
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("transform", "rotate(-90)")
+                .attr("y", -margin.left + 20)
+                .attr("x", -height / 2)
+                .style("text-anchor", "middle")
+                .style("font-size", "14px")
+                .text(chartData.yLabel);
+
+            // 添加网格线
+            svg.append("g")
+                .attr("class", "grid")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(xScale)
+                    .tickSize(-height)
+                    .tickFormat("")
+                );
+
+            svg.append("g")
+                .attr("class", "grid")
+                .call(d3.axisLeft(yScale)
+                    .tickSize(-width)
+                    .tickFormat("")
+                );
+
+            // 添加图表标题
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", -20)
+                .attr("text-anchor", "middle")
+                .style("font-size", "18px")
+                .style("font-weight", "bold")
+                .text(chartData.title);
+
+            // 创建折线生成器
+            const line = d3.line()
+                .x(d => xScale(d.year))
+                .y(d => yScale(d.value))
+                .curve(d3.curveMonotoneX); // 平滑曲线
+
+            // 为每个数据系列绘制线条和数据点
+            chartData.series.forEach(series => {
+                // 绘制线条
+                svg.append("path")
+                    .datum(series.data)
+                    .attr("class", "line")
+                    .attr("fill", "none")
+                    .attr("stroke", series.color)
+                    .attr("stroke-width", 2)
+                    .attr("d", line);
+
+                // 创建一个包含所有点的组
+                const dotsGroup = svg.append("g")
+                    .attr("class", "dots");
+
+                // 绘制数据点
+                dotsGroup.selectAll(".dot")
+                    .data(series.data)
+                    .enter().append("circle")
+                    .attr("class", "dot")
+                    .attr("cx", d => xScale(d.year))
+                    .attr("cy", d => yScale(d.value))
+                    .attr("fill", series.color)
+                    .on("mouseover", function(event, d) {
+                        // 显示 tooltip
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        tooltip.html(`${series.name}<br>${d.year}: ${d.value} 百万吨/年`)
+                            .style("left", (event.pageX - 10) + "px")
+                            .style("top", (event.pageY - 40) + "px");
+                    })
+                    .on("mouseout", function(d) {
+                        // 隐藏 tooltip
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+            });
+
+            // 创建 tooltip
+            const tooltip = d3.select("body").append("div")
+                .attr("class", "tooltip")
+                .style("opacity", 0);
+
+            // 创建图例 - 放在指定的图例容器中
+            chartData.series.forEach((series, i) => {
+                const legendItem = d3.select("#chartLegend").append("div")
+                    .attr("class", "legend-item");
+
+                legendItem.append("div")
+                    .attr("class", "legend-color")
+                    .style("background-color", series.color);
+
+                legendItem.append("text")
+                    .text(series.name)
+                    .style("font-size", "14px")
+                    .style("fill", "#333");
+            });
+        });
+    </script>
+
+</body>
+</html>

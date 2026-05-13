@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甲烷应用-清洁替代 - Methane.fyi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 顶部区域 - 固定定位 -->
+    <div class="top-section">
+        <div class="header-container">
+            <!-- Logo - 靠左，移除了文字 -->
+            <div class="brand-area">
+                <!-- 用 <a> 标签包裹图片，href 指向首页 -->
+                <a href="Methane FYI_0_main page.html">
+                    <img src="https://i.postimg.cc/phW8Jn5r/logo.png" alt="Methane.fyi Logo" />
+                </a>
+            </div>
+
+            <!-- 顶部导航菜单 - 固定宽度，优先保证5个tag不被挤压 -->
+            <div class="main-nav">
+                <div class="nav-item">
+                    <a href="#">关于甲烷</a>
+                    <div class="dropdown-menu">
+                        <a href="Methane FYI_1_science.html">科学</a>
+                        <a href="Methane FYI_1_benefits.html">控排机遇</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">甲烷应用</a>
+                    <div class="dropdown-menu">
+                        <a href="Methane FYI_2_use case.html">下游用途</a>
+                        <a href="Methane FYI_2_recovery.html">回收利用</a>
+                        <a href="Methane FYI_2_clean alternatives.html">清洁替代</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">排放数据</a>
+                    <div class="dropdown-menu">
+                        <a href="#">国家数据</a>
+                        <a href="#">产品数据</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">研究洞察</a>
+                    <div class="dropdown-menu">
+                        <a href="#">研究报告</a>
+                        <a href="#">博客</a>
+                        <a href="#">应用工具</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">关于我们</a>
+                </div>
+            </div>
+            
+            <!-- 搜索框 - 靠右 -->
+            <div class="search-area">
+                <input type="text" placeholder="搜索甲烷相关知识...">
+                <button onclick="alert('搜索功能待实现')">搜索</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 滚动进度条 - 固定定位 -->
+    <div class="scroll-progress-bar">
+        <div class="scroll-progress-fill" id="scrollProgressFill"></div>
+    </div>
+
+    <!-- 主体内容 - 增加上边距 -->
+    <div class="main-content">
+        <!-- 导航路径 -->
+        <div class="breadcrumb">甲烷应用 > 清洁替代</div>
+        
+        <!-- 页面标题 -->
+        <div class="page-header">
+            <h1 class="page-title">甲烷的清洁替代品</h1>
+        </div>
+
+        <!-- 清洁替代品介绍板块容器 -->
+        <div class="substitutes-container">
+            <!-- 生物天然气板块 -->
+            <div class="substitute-card">
+                <div class="substitute-icon">🌾</div>
+                <h3 class="substitute-title">生物天然气</h3>
+                <p class="substitute-desc">以农作物秸秆、畜禽粪污、餐厨垃圾等有机废弃物为原料，通过厌氧发酵和净化提纯生产。</p>
+            </div>
+
+            <!-- 电制甲烷板块 -->
+            <div class="substitute-card">
+                <div class="substitute-icon">⚡</div>
+                <h3 class="substitute-title">电制甲烷 (e-methane)</h3>
+                <p class="substitute-desc">以电解水制氢和捕集二氧化碳为原料制备。</p>
+            </div>
+        </div>
+
+        <!-- 箭头向下 -->
+        <div style="text-align: center; margin: 20px 0;">
+            <div class="arrow-down">⬇️</div>
+        </div>
+
+        <!-- 替代说明板块 -->
+        <div class="alternative-explanation">
+            <h3 class="explanation-title">清洁替代优势</h3>
+            <p class="explanation-text">化学组分与天然气几乎相同，可完全实现对传统化石天然气的清洁替代。</p>
+        </div>
+    </div>
+
+    <!-- 底部导航栏 -->
+    <div class="footer-nav">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>研究洞察</h3>
+                <ul>
+                    <li><a href="#">研究洞察</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>甲烷控排</h3>
+                <ul>
+                    <li><a href="#">科学</a></li>
+                    <li><a href="#">MRV</a></li>
+                    <li><a href="#">技术</a></li>
+                    <li><a href="#">政策</a></li>
+                    <li><a href="#">金融</a></li>
+                    <li><a href="#">市场机制</a></li>
+                    <li><a href="#">行业实践</a></li>
+                    <li><a href="#">国际合作</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>关于我们</h3>
+                <ul>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+            
+            <div class="follow-us">
+                <h3>关注我们</h3>
+                <!-- 替换为实际的二维码图片 -->
+                <img src="https://i.postimg.cc/Ff71rgc9/Wechat.jpg" alt="微信二维码" class="qr-code-img" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 滚动进度条功能
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+            const totalScrollable = docHeight - windowHeight;
+            
+            let scrollPercentage = 0;
+            if (totalScrollable > 0) {
+                scrollPercentage = Math.max(0, Math.min(100, (scrollY / totalScrollable) * 100));
+            }
+            
+            document.getElementById('scrollProgressFill').style.width = `${scrollPercentage}%`;
+        });
+    </script>
+
+</body>
+</html>
